@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<!-- Smoke testleri Chromium, Firefox ve WebKit (Safari motoru) üzerinde AYNI ANDA. Çalıştır: mvn test -Dsuite=cross-browser -->
+<suite name="SauceDemo Playwright - Cross Browser" parallel="tests" thread-count="3" verbose="1">
+    <test name="Chromium">
+        <parameter name="browser" value="chromium"/>
+        <groups><run><include name="smoke"/></run></groups>
+        <packages><package name="com.servet.pw.tests"/></packages>
+    </test>
+    <test name="Firefox">
+        <parameter name="browser" value="firefox"/>
+        <groups><run><include name="smoke"/></run></groups>
+        <packages><package name="com.servet.pw.tests"/></packages>
+    </test>
+    <test name="WebKit">
+        <parameter name="browser" value="webkit"/>
+        <groups><run><include name="smoke"/></run></groups>
+        <packages><package name="com.servet.pw.tests"/></packages>
+    </test>
+</suite>
